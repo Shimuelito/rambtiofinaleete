@@ -81,6 +81,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'INTERNAL',
+        'USER': 'system',
+        'PASSWORD': 'oracle',        
+        'HOST':'localhost/xe',
+        'PORT':'1521'
+    }
+}
+"""
+
 
 
 # Password validation
