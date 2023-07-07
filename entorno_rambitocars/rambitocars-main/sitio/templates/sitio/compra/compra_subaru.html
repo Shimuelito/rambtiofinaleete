@@ -1,0 +1,133 @@
+{% block compra_Subaru %}
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Compras</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'sitio/css/stylecompra.css' %}">
+
+    <script src="{% static 'sitio/js/jquery-3.6.4.min.js' %}"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card card-cart">
+                    <div class="card-header">
+                        <h4>Carro de Compras</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Imagen</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img class="d-img" src="{% static 'sitio/imagenes/subaru wrx_negroooo.jpg' %}" width="100"
+                                            height="100"></td>
+                                    <td>Subaru WRX</td>
+                                    <td>$49.900.000</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-secondary">-</button>
+                                        <span class="mx-2">1</span>
+                                        <button class="btn btn-sm btn-secondary">+</button>
+                                    </td>
+                                    <td>$19.000.000</td>
+                                    <td><button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-summary">
+                    <div class="card-header">
+                        <h4>Resumen</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td>$19.000.000 CLP</td>
+                                </tr>
+                                <tr>
+                                    <td>Impuestos</td>
+                                    <td>$4.900.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>$23.900.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a class="btn btn-block btn-primary" href="{% url 'metodo_pago' %}">Pagar</a>
+                        <a class="btn btn-block btn-primary" href="{% url 'catalogo' %}">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("https://mindicador.cl/api", function (datos) {
+                $("#dolar").text("$" + datos.dolar.valor + " CLP");
+                $("#uf").text("$" + datos.uf.valor + " CLP");
+                $("#ipc").text(datos.ipc.valor + "%");
+            }).fail(function () {
+                $("#dolar").text("Esperando conexion...");
+            });
+        });
+    </script>
+    <div class="container">
+        <div class="row text-white">
+            <div class="col-sm-4">
+                <div class="bg-info p-5 m-2 rounded">
+                    <p>Valor dolar:</p>
+                    <h3 id="dolar">....</h3>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="bg-warning p-5 m-2 rounded">
+                    <p>Valor UF:</p>
+                    <h3 id="uf">....</h3>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="bg-primary p-5 m-2 rounded">
+                    <p>IPC</p>
+                    <h3 id="ipc">....</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{% block js %}<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+{% endblock  %}
+
+</body>
+
+</html>
+{% endblock %}

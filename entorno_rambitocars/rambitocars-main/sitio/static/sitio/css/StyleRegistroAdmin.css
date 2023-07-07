@@ -1,0 +1,9 @@
+body {
+    margin: 0%;
+    background-color: black;
+    background-image: url(img/tokio_fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}

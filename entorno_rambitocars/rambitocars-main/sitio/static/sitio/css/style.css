@@ -1,0 +1,18 @@
+*{
+    margin: 0%;
+    padding: 0ch;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body{
+    background-image: url("imagenes/21960.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+  }
+
+  

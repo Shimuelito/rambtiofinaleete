@@ -1,0 +1,28 @@
+{% extends 'sitio/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'sitio/css/miestilo.css'%}">
+<link rel="stylesheet" href="{% static 'sitio/css/bootstrap.css'%}">
+{% endblock  %}
+
+
+{% block js %}
+<script src="{% static 'sitio/js/bootstrap.bundle.min.js' %}"></script>
+{% endblock  %}
+{% block contenido %}
+<div class="card" style="width: 18rem;">
+    <img src="{% static 'sitio/imagenes/Chimuelo.webp' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Jefe de ventas</h5>
+        <p class="card-text text-black bi-car-front-fill "> Vendedor experimentado con una gran trayectoria
+            <br>
+            Nombre: Samuel Contreras
+            <br>
+            Edad: 20 años
+        </p>
+        <p class="card-text text-black bi-phone-fill ">
+            <br> Fono contacto: +56987654323
+        </p>
+    </div>
+</div>
+{% endblock  %}

@@ -1,0 +1,42 @@
+{% extends 'sitio/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'sitio/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'sitio/css/miestilo.css' %}">
+
+{% endblock%}
+{% block contenido %}
+
+
+{% load humanize %}
+    <div class="productos">
+        {% for p in productos %}
+        <div class="col-sm-3 p-3">
+            <div class="card bg-dark text-light foto">
+                {% if p.imagen %}
+                <img class="card-img-top img-fluid" width="800" height="500"
+                    src="{{p.imagen.url}}" alt="chuck">
+                    {% endif %}
+                <div class="card-body">
+                    <h4 class="card-title text-info ">{{p.nombre}}</h4>
+                    <div class="container-fluid p-2 mt-2">
+                        <div class="col-sm-12 ">
+                            <h6>Marca</h6>
+                            <p>{{p.marca | capfirst}}</p>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <h6>Nombre</h6>
+                            <p>{{p.nombre | capfirst}}</p>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <h6>Precio</h6>
+                            <p>${{p.precio | intcomma}}</p>
+                        </div>
+                        <a href="{% url 'compra_supra' %}" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>   
+        </div> 
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+body {
+    margin: 0%;
+    background-color: black;
+    background-image: url(img/japon-fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.d-img{
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgb(15,15, 15,.5);
+
+}
+.logo
+{
+    font-family: 'Harukaze';
+    font-size:3lvw;
+    color: brown;
+}
+@font-face{
+    font-family: 'aAsianNinja';
+    src: url('../index.html') format('opentype');
+}

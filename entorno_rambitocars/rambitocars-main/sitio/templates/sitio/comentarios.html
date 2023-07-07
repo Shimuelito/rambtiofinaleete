@@ -1,0 +1,132 @@
+{% extends 'sitio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'sitio/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'sitio/css/miestilo.css' %}">
+<link rel="stylesheet" href="{% static 'sitio/css/style3.css' %}">
+{% endblock%}
+{% block js %}
+
+<script src="{% static 'sitio/js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}
+{% block contenido %}
+
+<section class="testimonios">
+    <div class="testimonios_header">
+        <span>Comentarios</span>
+        <h1>Clientes</h1>
+    </div>
+    <div class="testimonio_contenedor">
+        <div class="testimonio_caja">
+            <!---BOX1-->
+            <div class="caja-top">
+                <!--profile-->
+                <div class="perfil">
+                    <div class="perfil-img">
+                        <img src="{% static 'sitio/imagenes/cara2.png' %}" alt="">
+
+                    </div>
+                    <!--nombre de ususarios-->
+                    <div class="NAME-USER">
+                        <strong>Samuel contreras </strong>
+                        <span>@Shimuelo</span>
+                        <!--Reseñas-->
+                        <div class="Reseñas">
+                            <i class="fa-start"></i>
+                            <label for "estrellas"> ⭐⭐⭐⭐⭐</label>
+                        </div>
+                        <!--Coementarios-->
+                        <div class="Comentarios_cliente">
+                            <p>Muy buen servicio Increibles autos y atencion recomendado al 100% RambitoCar Lo
+                                mejor</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="caja-top">
+        <!--profile-->
+        <div class="perfil">
+            <div class="perfil-img">
+                <img src="{% static 'sitio/imagenes/cara3.png' %}" alt="">
+
+            </div>
+            <!--nombre de ususarios-->
+            <div class="NAME-USER">
+                <strong>Maria Rosa </strong>
+                <span>@Maria12</span>
+                <!--Reseñas-->
+                <div class="Reseñas">
+                    <i class="fa-start"></i>
+                    <label for "estrellas">⭐⭐⭐⭐⭐</label>
+                </div>
+                <!--Coementarios-->
+                <div class="Comentarios_cliente">
+                    <p>Muy buen servicio Increibles autos y atencion recomendado al 100% Rambocar Lo mejor</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="caja-top">
+        <!--profile-->
+        <div class="perfil">
+            <div class="perfil-img">
+                <img src="{% static 'sitio/imagenes/cara4.png' %}" alt="">
+
+            </div>
+            <!--nombre de ususarios-->
+            <div class="NAME-USER">
+                <strong>Juan Perez </strong>
+                <span>@Juanito</span>
+                <!--Reseñas-->
+                <div class="Reseñas">
+                    <i class="fa-start"></i>
+                    <label for "estrellas">⭐⭐⭐⭐</label>
+                </div>
+                <!--Coementarios-->
+                <div class="Comentarios_cliente">
+                    <p>Muy buen servicio Increibles autos y atencion recomendado al 100% Rambocar Lo mejor</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="caja-top">
+        <!--profile-->
+        <div class="perfil">
+            <div class="perfil-img">
+                <img src="{% static 'sitio/imagenes/cara5.png' %}" alt="">
+
+            </div>
+            <!--nombre de ususarios-->
+            <div class="NAME-USER">
+                <strong>Marcos Alonso </strong>
+                <span>@Marcalon</span>
+                <!--Reseñas-->
+                <div class="Reseñas">
+                    <i class="fa-start"></i>
+                    <label for "estrellas">⭐⭐⭐⭐</label>
+                </div>
+                <!--Coementarios-->
+                <div class="Comentarios_cliente">
+                    <p>Muy buen servicio Increibles autos y atencion recomendado al 100% Rambocar Lo mejor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="input-con">
+        <input id="Agregar Comentario" type="text" placeholder=" Agregar Comentario">
+        <div class="btn-agg">
+            <button onclick="nComentario()">Comentar</button>
+        </div>
+    </div>
+{% endblock  %}
